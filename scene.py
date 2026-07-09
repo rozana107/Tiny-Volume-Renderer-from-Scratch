@@ -207,12 +207,13 @@ def create_two_sphere_scene():
     return scene
 
 
-if __name__ == "__main__":
-    scene = create_two_sphere_scene()
+# if __name__ == "__main__":
+#     scene = create_two_sphere_scene()
 
-    test_point = np.array([0.0, 0.0, 0.0])
+#     test_point = np.array([0.0, 0.0, 0.0])
 
-    sigma, color = scene.evaluate(test_point)
+#     sigma, color = scene.evaluate(test_point)
 
-    print("Density at test point:", sigma)
-    print("Color at test point:", color)
+#     print("Density at test point:", sigma)
+#     print("Color at test point:", color)
+

@@ -1,37 +1,40 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from render import render_image
-from scene import create_two_sphere_scene
+# main.py
 
-def test_render_image():
+import matplotlib.pyplot as plt
+
+from scene import create_two_sphere_scene
+from render import render_image
+
+
+def main():
+    scene = create_two_sphere_scene()
+
     width = 400
     height = 400
-    fov_degrees = 60
-    camera_position = np.array([0.0, 0.0, -3.0])
+    fov_degrees = scene.camera.fov_degrees
+    camera_position = scene.camera.position
+
     near = 1.0
     far = 5.0
     num_samples = 128
 
-    scene = create_two_sphere_scene()
+    image = render_image(
+        scene,
+        width,
+        height,
+        fov_degrees,
+        camera_position,
+        near,
+        far,
+        num_samples
+    )
 
-    try:
-        scene_image = render_image(
-            scene,
-            width,
-            height,
-            fov_degrees,
-            camera_position,
-            near,
-            far,
-            num_samples
-        )
-        print("render_image ran successfully. Output shape:", scene_image.shape)
-        plt.imshow(scene_image)
-        plt.axis("off")
-        plt.show()
-        plt.imsave("tiny_volume_renderer.png", scene_image)
-    except Exception as e:
-        print("render_image failed with exception:", e)
+    plt.imshow(image)
+    plt.axis("off")
+    plt.show()
+
+    plt.imsave("two_spheres_volume_render.png", image)
+
 
 if __name__ == "__main__":
-    test_render_image()
+    main()
