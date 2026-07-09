@@ -189,14 +189,14 @@ def create_two_sphere_scene():
 
     red_sphere = VolumeSphere(
         center=[-0.45, 0.0, 0.0],
-        radius=0.55,
+        radius=0.45,
         color=[1.0, 0.1, 0.1],
         sigma_max=10.0
     )
 
     blue_sphere = VolumeSphere(
-        center=[0.45, 0.0, 0.0],
-        radius=0.55,
+        center=[0.55, 0.0, 0.0],
+        radius=0.35,
         color=[0.1, 0.2, 1.0],
         sigma_max=10.0
     )
