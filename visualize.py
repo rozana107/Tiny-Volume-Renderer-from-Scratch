@@ -10,7 +10,7 @@ def visualize_density_3d(
     grid_size=60,
     bounds=(-1.5, 1.5),
     density_threshold=0.8,
-    max_points=20000
+    max_points=10000 # 20000
 ):
     """
     Visualize volumetric objects by sampling the 3D density field.
